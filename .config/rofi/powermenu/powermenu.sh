@@ -80,10 +80,10 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock-fancy ]]; then
-			i3lock-fancy -t MicroHawk
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
+		if [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
+		elif [[ -f /usr/bin/i3lock-fancy ]]; then
+			i3lock-fancy -t MicroHawk
 		fi
         ;;
     $suspend)

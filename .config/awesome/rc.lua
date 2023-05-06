@@ -99,12 +99,12 @@ local modkey1      = "Control"
 -- personal variables
 --change these variables if you want
 local browser           = "brave"
-local editor            = os.getenv("EDITOR") or "nano"
+local editor            = os.getenv("EDITOR") or "vim"
 local editorgui         = "code"
 local filemanager       = "thunar"
 local mailclient        = "geary"
 local mediaplayer       = "vlc"
-local scrlocker         = "i3lock-fancy"
+local scrlocker         = "betterlockscreen"
 -- local terminal          = "st -f consolas"
 local terminal          = "kitty"
 local virtualmachine    = "virtualbox"
@@ -112,7 +112,7 @@ local virtualmachine    = "virtualbox"
 -- awesome variables
 awful.util.terminal = terminal
 -- https://fsymbols.com/generators/blocky/
-awful.util.tagnames = {" 🆆🆆🆆", " 🅳🅴🆅", " 🆃🅴🆁🅼", " 🅵🅸🅻🅴", " 🆂🅷🅸🆃" }
+awful.util.tagnames = {" 🆆🆆🆆 ", " 🅳🅴🆅 ", " 🆃🅴🆁🅼 ", " 🅵🅸🅻🅴 ", " 🆂🅷🅸🆃 " }
 -- awful.util.tagnames = {" α  👻", " β  💀", " γ  🧠", " δ  👾", " ζ  🙀" }
 -- awful.util.tagnames = { " 1", " 2", " 3", " 4", " 5"}
 awful.layout.suit.tile.left.mirror = true
@@ -939,11 +939,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart applications
-os.execute("sh ~/.screenlayout/rightAcerMonitor.sh")
+--os.execute("sh ~/.screenlayout/rightAcerMonitor.sh")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("pa-applet")
---  awful.spawn.with_shell("pasystray")
+--awful.spawn.with_shell("pa-applet")
+awful.spawn.with_shell("redshift -l 21.9974:79.0011 -O 4900")
+awful.spawn.with_shell("pasystray")
 -- awful.spawn.with_shell("nitrogen --restore")
 -- awful.spawn.with_shell("blueman-tray")
 -- awful.spawn.with_shell("volumeicon")
