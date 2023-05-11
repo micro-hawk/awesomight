@@ -200,8 +200,8 @@ beautiful.init(string.format(gears.filesystem.get_configuration_dir() .. "/theme
 -- {{{ Menu
 local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
-    { "manual", terminal .. " -e 'man awesome'" },
-    { "edit config", terminal.." nano /home/dt/.config/awesome/rc.lua" },
+    { "manual", terminal .. " -e man awesome" },
+    { "edit config", terminal .. " -e nano ~/.config/awesome/rc.lua" },
     { "arandr", "arandr" },
     { "restart", awesome.restart },
 }
@@ -945,7 +945,7 @@ awful.spawn.with_shell("nm-applet")
 --awful.spawn.with_shell("pa-applet")
 awful.spawn.with_shell("redshift -l 21.9974:79.0011 -O 4900")
 awful.spawn.with_shell("pasystray")
--- awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("nitrogen --restore")
 -- awful.spawn.with_shell("blueman-tray")
 -- awful.spawn.with_shell("volumeicon")
 --  awful.spawn.with_shell("redshift")
