@@ -1,8 +1,8 @@
 # Awesomight - Tokyo Night based AwesomeWM
 
-![Screenshot of my desktop](/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/desktop.png)
+![Screenshot of my desktop](/dotfiles/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/desktop.png)
 
-![Screenshot of my desktop](/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/workspace.png)
+![Screenshot of my desktop](/dotfiles/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/workspace.png)
 
 
 
