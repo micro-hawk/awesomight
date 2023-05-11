@@ -126,7 +126,7 @@ ip4=$(/sbin/ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)
 
 export SPRING_CONSUL_HOST=${ip4}
 export VAULT_ADDR='http://0.0.0.0:8200'
-export VAULT_TOKEN=hvs.gYG9Zb1c7w7EYfaMk3o1OV1J
+export VAULT_TOKEN=
 
 
 #source pgadmin4/bin/activate
