@@ -9,7 +9,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/tokyo-night"
-theme.wallpaper                                 = theme.dir .. "/tokyo-night/witcher-wall7.png"
+theme.wallpaper                                 = theme.dir .. "/tokyo-night/walking-girl-on-water.jpg"
 theme.font                                      = "Cartograph CF Italic 10"
 theme.fg_normal                                 = "#DDDDFF"
 theme.fg_focus                                  = "#f7768e"
