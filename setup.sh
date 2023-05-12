@@ -21,11 +21,12 @@ ROFI_DIR="$HOME/.config/rofi"
 PICOM_DIR="$HOME/.config/picom"
 
 install_paru_bin() {
-    # sudo pacman -S git
     if command -v paru &> /dev/null; then
-    echo -e ${BRed}"[!] Removing Paru\n" ${Color_Off}
-    sudo pacman -Rcns paru
-    echo "paru has been removed successfully."
+        echo -e ${BRed}"[!] Removing Paru\n" ${Color_Off}
+        sudo pacman -Rcns paru
+        echo "paru has been removed successfully."
+    else 
+    sudo pacman -S git --noconfirm --needed
     fi
 
     echo -e ${BBlue}"\n[*] Installing paru-bin..." ${Color_Off}
@@ -103,6 +104,27 @@ install_rofi_themes() {
 	fi
 }
 
+install_zsh_plugins() {
+	echo -e ${BBlue}"\n[*] Installing ZSH Plugins..." ${Color_Off}
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  \
+        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+}
+
+install_vim_plugins() {
+	echo -e ${BBlue}"\n[*] Installing Plugin Manager..." ${Color_Off}
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+	echo -e ${BBlue}"\n[*] Installing Plugin for VIM..." ${Color_Off}
+    if vim +PlugUpdate +qall ; then
+        echo -e ${BGreen}"[*] Successfully Installed.\n" ${Color_Off}
+    else 
+        echo -e ${BRed}"[!] Failed to install vim plugins.\n" ${Color_Off}
+    fi
+}
+
 install_picom() {
     if [[ -d "$PICOM_DIR" ]]; then
         echo -e ${BPurple}"[*] Creating a backup of your picom configs..." ${Color_Off}
@@ -133,7 +155,7 @@ install_picom() {
 
 # Main
 main() {
-    # install_paru_bin
+install_vim_plugins
 }
 
 main
