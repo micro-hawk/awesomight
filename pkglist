@@ -2,8 +2,11 @@ awesome
 dmenu
 network-manager-applet
 rofi
+cava
 firefox
 kitty
+ranger
+w3m
 pasystray
 redshift
 i3lock-fancy-git 
