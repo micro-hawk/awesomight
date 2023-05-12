@@ -20,9 +20,30 @@ THEME_DIR="$HOME/.themes"
 ROFI_DIR="$HOME/.config/rofi"
 PICOM_DIR="$HOME/.config/picom"
 
+install_paru_bin() {
+    # sudo pacman -S git
+    if command -v paru &> /dev/null; then
+    echo -e ${BRed}"[!] Removing Paru\n" ${Color_Off}
+    sudo pacman -Rcns paru
+    echo "paru has been removed successfully."
+    fi
+
+    echo -e ${BBlue}"\n[*] Installing paru-bin..." ${Color_Off}
+    mkdir -p $HOME/aur && rm -rf $HOME/aur/paru-bin
+    git clone https://aur.archlinux.org/paru-bin.git $HOME/aur/paru-bin 
+    cd $HOME/aur/paru-bin/
+
+    if makepkg -sci --noconfirm --needed ; then
+        echo -e ${BGreen}"[*] Successfully Installed.\n" ${Color_Off}
+    else
+        echo -e ${BRed}"[!] Failed to install.\n" ${Color_Off}
+        exit 1
+    fi   
+}
+
 install_pklist() {
     echo -e ${BBlue}"\n[*] Installing Pkglist..." ${Color_Off}
-    if paru -S $(cat $DIR/pkglist) --noconfirm; then
+    if paru -S $(cat $DIR/pkglist) --noconfirm --needed ; then
         echo -e ${BGreen}"[*] Successfully Installed.\n" ${Color_Off}
     else
         echo -e ${BRed}"[!] Failed to install.\n" ${Color_Off}
@@ -92,14 +113,14 @@ install_picom() {
     case $AB_PICOM in
         [aA])
             echo -e ${BBlue}"\n[*] Installing Picom with Animation..." ${Color_Off}
-            paru -Rcns picom-ibhagwan-git --noconfirm
-            paru -S picom-pijulius-git --noconfirm
+            paru -Rcns picom-ibhagwan-git --noconfirm --needed 
+            paru -S picom-pijulius-git --noconfirm --needed 
             { mkdir -p "$PICOM_DIR"; cp -rf $DIR/picom/picom-animations.conf "$PICOM_DIR/picom.conf"; }
             ;;
         [bB])
             echo -e ${BBlue}"\n[*] Installing Picom with Blur Effect..." ${Color_Off}
-            paru -Rcns picom-pijulius-git --noconfirm
-            paru -S picom-ibhagwan-git --noconfirm
+            paru -Rcns picom-pijulius-git --noconfirm --needed 
+            paru -S picom-ibhagwan-git --noconfirm --needed 
             { mkdir -p "$PICOM_DIR"; cp -rf $DIR/picom/picom-blur.conf "$PICOM_DIR/picom.conf"; }
             ;;
         *)
@@ -112,7 +133,7 @@ install_picom() {
 
 # Main
 main() {
-    install_pklist
+    # install_paru_bin
 }
 
 main
