@@ -10,6 +10,8 @@ BBlue='\033[1;34m'  BPurple='\033[1;35m' BCyan='\033[1;36m'  BWhite='\033[1;37m'
 ## Directories ----------------------------
 DIR=`pwd`
 FONT_DIR="$HOME/.fonts"
+ICON_DIR="$HOME/.icons"
+THEME_DIR="$HOME/.themes"
 ROFI_DIR="$HOME/.config/rofi"
 
 # Installing Fonts
@@ -23,6 +25,26 @@ install_fonts() {
 	fi
 	echo -e ${BYellow}"[*] Updating font cache...\n" ${Color_Off}
 	fc-cache
+}
+
+# Installing Icons
+install_icons() {
+	echo -e ${BBlue}"\n[*] Installing icons..." ${Color_Off}
+	if [[ ! -d "$ICON_DIR" ]]; then
+		mkdir -p "$ICON_DIR"
+    fi
+    cp -rf $DIR/icons/* "$ICON_DIR"
+    echo -e ${BGreen}"[*] Successfully Installed.\n" ${Color_Off}
+}
+
+# Installing GTK Themes
+install_themes() {
+	echo -e ${BBlue}"\n[*] Installing themes..." ${Color_Off}
+	if [[ ! -d "$THEME_DIR" ]]; then
+		mkdir -p "$THEME_DIR"
+    fi
+    cp -rf $DIR/gtk-themes/* "$THEME_DIR"
+    echo -e ${BGreen}"[*] Successfully Installed.\n" ${Color_Off}
 }
 
 # Install Rofi Themes
@@ -45,8 +67,7 @@ install_rofi_themes() {
 
 # Main
 main() {
-	install_fonts
-	install_rofi_themes
+    # install_themes
 }
 
 main
