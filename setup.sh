@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-## Installer Script
+## Archlinux based Installer script
 
 ## Colors ----------------------------
 Color_Off='\033[0m'
@@ -107,6 +107,22 @@ install_rofi_themes() {
     fi
 }
 
+backup_configs() {
+    echo -e ${BPurple}"[*] Backing up existing files..." ${Color_Off}
+    mv -iv ~/.config/alacritty ~/.config/alacritty.old
+    mv -iv ~/.config/awesome ~/.config/awesome.old
+    mv -iv ~/.config/htop ~/.config/htop.old
+    mv -iv ~/.config/cava ~/.config/cava.old
+    mv -iv ~/.config/kitty ~/.config/kitty.old
+    mv -iv ~/.config/neofetch ~/.config/neofetch.old
+    mv -iv ~/.config/ranger ~/.config/ranger.old
+    mv -iv ~/.config/Thunar ~/.config/Thunar.old
+    mv -iv ~/.bashrc ~/.bashrc.old
+    mv -iv ~/.vimrc ~/.vimrc.old
+    mv -iv ~/.zshrc ~/.zshrc.old
+    mv -iv ~/.zsh-aliases ~/.zsh-aliases.old
+}
+
 install_zsh_plugins() {
     echo -e ${BBlue}"\n[*] Installing ZSH Plugins..." ${Color_Off}
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
@@ -162,9 +178,10 @@ install_picom() {
 
 }
 
+
 # Main
-# main() {
-#     install_vim_plugins
-# }
+main() {
+    install_vim_plugins
+}
 
 # main
