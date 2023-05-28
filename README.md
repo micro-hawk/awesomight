@@ -27,9 +27,7 @@
 ```bash
 sh setup.sh
 ```
-<br> 
-
-### ⚠️ NOTE - While installing [Picom](https://github.com/yshui/picom), it will ask for blur effect or animations like Hyprland. 
+> **NOTE** - While installing [Picom](https://github.com/yshui/picom), it will ask for blur effect or animations like Hyprland. 
 
 ### For [Blur Effect](/picom/picom-blur.conf): 
     paru -S picom-ibhagwan-git
