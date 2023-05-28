@@ -1,12 +1,20 @@
-# Awesomight - Tokyo Night based AwesomeWM
+<div align="center">
+
+# 🌸**AWESOMIGHT**🌸
+
+![GitHub Repo stars](https://img.shields.io/github/stars/micro-hawk/awesomight?style=for-the-badge&color=f7768e) ![GitHub last commit](https://img.shields.io/github/last-commit/micro-hawk/awesomight?style=for-the-badge&color=f7768e) ![GitHub repo size](https://img.shields.io/github/repo-size/micro-hawk/awesomight?style=for-the-badge&color=f7768e)
+
+
+<br/>
 
 ![Screenshot of my desktop](/dotfiles/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/desktop.png)
 
+![Screenshot of my desktop](/dotfiles/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/vimrc.png)
+
 ![Screenshot of my desktop](/dotfiles/.config/awesome/themes/tokyo-night/tokyo-night/Screenshots/workspace.png)
 
+</div>
 
-
-Awesome is a highly configurable, tiling window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license.  Awesome is a perfect "first" tiling window manager for those who want to try out tiling, but the extreme customization that you can achieve with awesome makes it a power user's dream.  Awesome is configured with Lua.
 
 # Features
 
@@ -15,7 +23,21 @@ Awesome is a highly configurable, tiling window manager for X. It is very fast, 
 * Configured in Lua.
 * A documented API to configure and define the behavior of your window manager.
 
-# Installation
+# Arch-Based Installation
+```bash
+sh setup.sh
+```
+<br> 
+
+### ⚠️ NOTE - While installing [Picom](https://github.com/yshui/picom), it will ask for blur effect or animations like Hyprland. 
+
+### For [Blur Effect](/picom/picom-blur.conf): 
+    paru -S picom-ibhagwan-git
+### For [Animations](/picom/picom-animations.conf): 
+    paru -S picom-pijulius-git
+<br>
+
+# Manual Installation
 
 ```bash
 sudo pacman -S awesome dmenu rofi firefox kitty pasystray volumeicon
@@ -24,18 +46,15 @@ sudo pacman -S awesome dmenu rofi firefox kitty pasystray volumeicon
 ```bash
 paru -S i3lock-fancy-git picom-ibhagwan-git thunar-extended
 ```
-# Additional tools for Customizing it.
+### Personalizing Tools
 
 ```bash
 sudo pacman -S lxappearance nitrogen
 ```
-* For Fonts Im using Terminus
-```bash
-sudo pacman -S terminus-font 
-```
+### Install Fonts
 
 ```bash
-paru -S consolas-font
+paru -S terminus-font consolas-font ttf-firacode-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
 
 # My Keybindings
@@ -50,8 +69,8 @@ keybindings consistent with all of my window managers.
 | `MODKEY + SHIFT + c` | closes window with focus |
 | `MODKEY + SHIFT + r` | restarts awesome |
 | `MODKEY + CTRL + q` | quits awesome |
-| `MODKEY + 1-9` | switch focus to workspace (1-9) |
-| `MODKEY + SHIFT + 1-9` | send focused window to workspace (1-9) |
+| `MODKEY + 1-5` | switch focus to workspace (1-5) |
+| `MODKEY + SHIFT + 1-5` | send focused window to workspace (1-5) |
 | `MODKEY + m` | maximized focused window |
 | `MODKEY + d` | minimize focused window  |
 | `MODKEY + CTRL + d` | restore recent minimize window |
@@ -101,10 +120,9 @@ Please read the [contributing guide](https://github.com/awesomeWM/awesome/blob/m
 Online documentation is available [here](https://awesomewm.org/apidoc/).
 
 ## License
+The content in this repository is licensed under the [MIT License](/LICENSE). You are free to use, modify, and distribute the resources and configurations as per the terms of the license.
 
-The project is licensed under GNU General Public License v2 or later.
-You can read it online at ([v2](http://www.gnu.org/licenses/gpl-2.0.html) or [v3](http://www.gnu.org/licenses/gpl.html)).
+## Disclaimer
+⚠️ Please be aware that the software is maintained by a sole developer, which means there may be some bugs present. Please proceed with caution when using it.
 
-    
-    
     

@@ -3,9 +3,11 @@ network-manager-applet
 dmenu
 rofi
 vim
+code-minimap-bin
 zsh
 exa
 ranger
+w3m
 fzf
 cava
 unzip
@@ -13,10 +15,12 @@ htop
 neofetch
 arandr
 firefox
+brave-bin
+visual-studio-code-bin
 kitty
-w3m
 pasystray
 redshift
+betterlockscreen
 i3lock-fancy-git
 thunar-extended
 thunar-volman
