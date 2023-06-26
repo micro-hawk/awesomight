@@ -27,6 +27,19 @@
 ```bash
 sh setup.sh
 ```
+
+Usage:  `./setup.sh`  **[OPTIONS...]**
+
+```
+-a, --all All          Install all the packages and configure
+```
+
+For example: install all themes
+
+```sh
+./setup.sh --all
+```
+
 > **NOTE** - While installing [Picom](https://github.com/yshui/picom), it will ask for blur effect or animations like Hyprland. 
 
 ### For [Blur Effect](/picom/picom-blur.conf): 
