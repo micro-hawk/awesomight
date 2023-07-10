@@ -212,7 +212,7 @@ install_picom() {
     case $AB_PICOM in
     [aA])
         echo -e ${BBlue}"\n[*] Installing Picom with Animation..." ${Color_Off}
-        paru -Rcns picom-ibhagwan-git --noconfirm --needed
+        paru -Rcns picom-ibhagwan-git
         paru -S picom-pijulius-git --noconfirm --needed
         {
             mkdir -p "$PICOM_DIR"
@@ -221,7 +221,7 @@ install_picom() {
         ;;
     [bB])
         echo -e ${BBlue}"\n[*] Installing Picom with Blur Effect..." ${Color_Off}
-        paru -Rcns picom-pijulius-git --noconfirm --needed
+        paru -Rcns picom-pijulius-git
         paru -S picom-ibhagwan-git --noconfirm --needed
         {
             mkdir -p "$PICOM_DIR"
