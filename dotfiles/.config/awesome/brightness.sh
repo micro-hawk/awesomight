@@ -6,7 +6,9 @@ echo "Max Brightness: ${max_brightness}"
 echo -n "Enter brightness %: "
 read brightness_percentage
 
-brightness=$(($brightness_percentage*$max_brightness/100));
+#brightness=$(($brightness_percentage*$max_brightness/100));
+brightness=$(awk "BEGIN { printf(\"%.0f\", $brightness_percentage*$max_brightness/100); }")
+
 # echo $brightness
 if [ $brightness -le $max_brightness ]; then
     echo "$brightness" > /sys/class/backlight/${dir_contents}/brightness
